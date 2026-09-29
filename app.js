@@ -69,7 +69,7 @@ function renderPasses(list) {
     const faltaN = Math.max(META_N - Number(r.total_normal), 0);
     return `<div class="pass ${boarded ? "boarded" : ""}">
       <div class="pass-main">
-        <div class="pass-top"><span>Infinity Air</span><span>✈ Embarque</span></div>
+        <div class="pass-top"><span>Infinity Airlines</span><span>✈ Embarque</span></div>
         <p class="pass-name">${esc(r.vendedor)}</p>
         <span class="pass-team">${esc(r.equipe || "")}</span>
         <div class="leg">
@@ -77,7 +77,7 @@ function renderPasses(list) {
           <div class="mini"><div style="width:${Math.min(p, 1) * 100}%"></div></div>
         </div>
         <div class="leg">
-          <div class="leg-line"><span>Normal</span><span class="${faltaN ? "" : "ok"}">${faltaN ? `faltam ${brl.format(faltaN)}` : "completa ✓"}</span></div>
+          <div class="leg-line"><span>Adesão</span><span class="${faltaN ? "" : "ok"}">${faltaN ? `faltam ${brl.format(faltaN)}` : "completa ✓"}</span></div>
           <div class="mini norm"><div style="width:${Math.min(n, 1) * 100}%"></div></div>
         </div>
       </div>
@@ -119,7 +119,7 @@ function renderTicker(list, flash) {
   const el = $("ticker");
   if (!last) { el.hidden = true; return; }
   el.hidden = false;
-  el.innerHTML = `🌊 Última venda: <b>+${brl.format(Number(last.ultima_venda_valor))}</b> em ${last.ultima_venda_parcelinha ? "Parcelinha" : "venda normal"} · ${esc(last.vendedor)} <span class="when">· ${relTime(last.ultima_venda_em)}</span>`;
+  el.innerHTML = `🌊 Última venda: <b>+${brl.format(Number(last.ultima_venda_valor))}</b> em ${last.ultima_venda_parcelinha ? "Parcelinha" : "Adesão"} · ${esc(last.vendedor)} <span class="when">· ${relTime(last.ultima_venda_em)}</span>`;
   if (flash) { el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); }
 }
 
