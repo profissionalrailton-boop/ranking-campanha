@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#8fd8f5" />
+  <title>Rumo à Viagem · Ranking Infinity</title>
+  <meta name="description" content="Ranking ao vivo da campanha Rumo à Viagem — setembro a dezembro de 2026." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏝️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="cloud c1" aria-hidden="true"></div>
+    <div class="cloud c2" aria-hidden="true"></div>
+    <div class="cloud c3" aria-hidden="true"></div>
+
+    <svg class="palm" viewBox="0 0 120 170" aria-hidden="true">
+      <path d="M58 170 C 60 130, 56 90, 70 42" fill="none" stroke="#9a6a45" stroke-width="9" stroke-linecap="round" />
+      <path d="M58 170 C 60 130, 56 90, 70 42" fill="none" stroke="#b9855c" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" />
+      <g fill="#2e9e6b">
+        <path d="M70 42 C 50 20, 25 25, 8 44 C 30 34, 50 36, 70 42Z" />
+        <path d="M70 42 C 92 18, 114 22, 120 40 C 102 31, 86 33, 70 42Z" />
+        <path d="M70 42 C 60 14, 72 0, 90 2 C 77 11, 73 23, 70 42Z" />
+      </g>
+      <g fill="#3cb67c">
+        <path d="M70 42 C 45 46, 30 64, 28 82 C 40 64, 55 51, 70 42Z" />
+        <path d="M70 42 C 93 47, 106 64, 106 82 C 95 65, 84 53, 70 42Z" />
+      </g>
+      <circle cx="66" cy="47" r="5" fill="#7a4e2f" />
+      <circle cx="75" cy="48" r="5" fill="#8b5a36" />
+    </svg>
+
+    <div class="hero-content">
+      <span class="eyebrow">∞ Infinity · setembro a dezembro 2026</span>
+      <h1>Rumo à <span>Viagem</span></h1>
+      <p class="lead">
+        Bateu <strong>R$ 3 milhões em Parcelinha</strong> e <strong>R$ 1 milhão em vendas normais</strong>?
+        A viagem com tudo pago é sua.
+      </p>
+      <div class="hero-meta">
+        <span class="chip" id="countdown">⏳ calculando…</span>
+        <span class="chip live" id="live"><i></i><span>conectando…</span></span>
+      </div>
+    </div>
+
+    <div class="waves" aria-hidden="true">
+      <svg class="wave w1" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 50 Q 180 20 360 50 T 720 50 T 1080 50 T 1440 50 T 1800 50 T 2160 50 T 2520 50 T 2880 50 V100 H0Z" /></svg>
+      <svg class="wave w2" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 55 Q 180 30 360 55 T 720 55 T 1080 55 T 1440 55 T 1800 55 T 2160 55 T 2520 55 T 2880 55 V100 H0Z" /></svg>
+      <svg class="wave w3" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 62 Q 180 44 360 62 T 720 62 T 1080 62 T 1440 62 T 1800 62 T 2160 62 T 2520 62 T 2880 62 V100 H0Z" /></svg>
+    </div>
+  </header>
+
+  <main>
+    <p class="ticker" id="ticker" hidden></p>
+
+    <section class="summary" aria-label="Resumo da campanha">
+      <div class="stat">
+        <span class="stat-label">Parcelinha no time</span>
+        <strong class="stat-value" id="sum-parcelinha">—</strong>
+        <span class="stat-sub" id="sum-parcelinha-sub">&nbsp;</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Vendas normais no time</span>
+        <strong class="stat-value" id="sum-normal">—</strong>
+        <span class="stat-sub" id="sum-normal-sub">&nbsp;</span>
+      </div>
+      <div class="stat highlight">
+        <span class="stat-label">Viagens garantidas</span>
+        <strong class="stat-value" id="sum-viagens">—</strong>
+        <span class="stat-sub" id="sum-viagens-sub">&nbsp;</span>
+      </div>
+    </section>
+
+    <section class="boards">
+      <article class="board">
+        <header class="board-head">
+          <span class="board-icon parc" aria-hidden="true">🌴</span>
+          <div>
+            <h2>Parcelinha</h2>
+            <p>Meta individual: <strong>R$ 3 milhões</strong></p>
+          </div>
+        </header>
+        <ol class="rank" id="rank-parcelinha"></ol>
+      </article>
+
+      <article class="board">
+        <header class="board-head">
+          <span class="board-icon norm" aria-hidden="true">🐚</span>
+          <div>
+            <h2>Vendas normais</h2>
+            <p>Meta individual: <strong>R$ 1 milhão</strong></p>
+          </div>
+        </header>
+        <ol class="rank" id="rank-normal"></ol>
+      </article>
+    </section>
+
+    <section class="passes-section">
+      <div class="section-head">
+        <h2>Cartões de embarque</h2>
+        <p>Para embarcar, é preciso completar <strong>as duas metas</strong>. Veja quanto falta para cada um.</p>
+      </div>
+      <div class="passes" id="passes"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>O ranking se atualiza sozinho a cada venda cadastrada. Última atualização: <span id="updated">—</span></p>
+    <p class="fine">Em caso de empate, fica na frente quem chegou primeiro ao valor.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
